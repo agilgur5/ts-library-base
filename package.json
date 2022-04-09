@@ -33,11 +33,11 @@
   "scripts": {
     "tsc": "tsc",
     "test:pub": "npm pack",
-    "pub": "npm publish"
+    "pub": "npm publish",
+    "changelog": "changelog-maker"
   },
-  "peerDependencies": {},
-  "dependencies": {},
   "devDependencies": {
+    "changelog-maker": "^3.0.0",
     "typescript": "^4.4.0"
   }
 }
