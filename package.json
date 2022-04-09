@@ -1,0 +1,40 @@
+{
+  "name": "ts-library-base",
+  "version": "0.0.1",
+  "description": "Base boilerplate for my TypeScript libraries (WIP)",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "author": "Anton Gilgur",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/agilgur5/ts-library-base",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agilgur5/ts-library-base.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agilgur5/ts-library-base/issues"
+  },
+  "funding": {
+    "url": "https://github.com/sponsors/agilgur5"
+  },
+  "keywords": [
+    "typescript",
+    "ts",
+    "library",
+    "package",
+    "base",
+    "boilerplate",
+    "template"
+  ],
+  "scripts": {
+    "test:pub": "npm pack",
+    "pub": "npm publish"
+  },
+  "peerDependencies": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
