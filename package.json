@@ -31,10 +31,13 @@
     "template"
   ],
   "scripts": {
+    "tsc": "tsc",
     "test:pub": "npm pack",
     "pub": "npm publish"
   },
   "peerDependencies": {},
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "typescript": "^4.4.0"
+  }
 }
