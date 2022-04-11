@@ -37,6 +37,7 @@
     "changelog": "changelog-maker"
   },
   "devDependencies": {
+    "@tsconfig/strictest": "^1.0.0",
     "changelog-maker": "^3.0.0",
     "typescript": "^4.4.0"
   }
