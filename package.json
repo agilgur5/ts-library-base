@@ -32,13 +32,19 @@
   ],
   "scripts": {
     "tsc": "tsc",
+    "test": "jest",
     "test:pub": "npm pack",
     "pub": "npm publish",
     "changelog": "changelog-maker"
   },
   "devDependencies": {
+    "@jest/globals": "^27.5.1",
+    "@jest/types": "^27.5.1",
     "@tsconfig/strictest": "^1.0.0",
     "changelog-maker": "^3.0.0",
+    "jest": "^27.5.1",
+    "jest-config": "^27.5.1",
+    "ts-node": "^10.7.0",
     "typescript": "^4.4.0"
   }
 }
