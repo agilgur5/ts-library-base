@@ -1,0 +1,6 @@
+supports es6-module # https://github.com/babel/preset-modules -- 92%+ of browsers and a good optimization target
+Firefox ESR # not EoL Firefox
+maintained node versions # not EoL Node
+
+not dead # don't support EoL browsers
+not ie 11 # IE 11 is EoL (not included in "dead" yet)

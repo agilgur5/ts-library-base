@@ -5,9 +5,9 @@ module.exports = api => {
   // normally use browserslistrc, but for Jest, use current version of Node
   const isTest = api.env('test')
   const jestTargets = { targets: { node: 'current' } }
-  /** @type {import('@babel/core').PluginItem} */
-  let presetEnv = '@babel/preset-env'
-  if (isTest) presetEnv = [presetEnv, jestTargets]
+  /** @type {[import('@babel/core').PluginTarget, import('@babel/core').PluginOptions]} */
+  let presetEnv = ['@babel/preset-env', { bugfixes: true }]
+  if (isTest) presetEnv[1] = { ...presetEnv[1], ...jestTargets }
 
   return {
     presets: [
