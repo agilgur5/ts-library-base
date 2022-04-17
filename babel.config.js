@@ -13,6 +13,9 @@ module.exports = api => {
     presets: [
       presetEnv,
       '@babel/preset-typescript',
-    ],
+    ], plugins: [
+      // used with @rollup/plugin-babel
+      '@babel/plugin-transform-runtime',
+    ]
   }
 }
