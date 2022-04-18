@@ -1,3 +1,7 @@
+# Test coverage reports
+coverage/
+
+# Built files
 dist/
 build/
 

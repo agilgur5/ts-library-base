@@ -38,14 +38,19 @@
     "template"
   ],
   "scripts": {
+    "clean": "rm -rf dist/ && rm *.tgz",
+    "clean:build": "npm run clean && npm run build",
     "build": "concurrently -n rollup,tsc \"npm run build:rollup\" \"npm run build:types\"",
     "build:rollup": "rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2",
     "build:types": "tsc -p tsconfig.build.json",
     "build:watch": "concurrently -n rollup,tsc \"npm run build:rollup -- -w\" \"npm run build:types -- -w\"",
     "tsc": "tsc",
     "test": "jest",
-    "test:pub": "npm run build && npm pack",
-    "pub": "npm run build && npm publish",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:pub": "npm run clean:build && npm pack",
+    "prepub": "concurrently -n test-pub,test-cov,tsc \"npm run test:pub\" \"npm run test:coverage\" \"npm run tsc\"",
+    "pub": "npm run clean:build && npm publish",
     "changelog": "changelog-maker"
   },
   "dependencies": {

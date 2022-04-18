@@ -1,8 +1,8 @@
 {
   // https://github.com/tsconfig/bases
   "extends": "@tsconfig/strictest/tsconfig.json",
-  // exclude node_modules (the default), and the dist dir
-  "exclude": ["node_modules/", "dist/"],
+  // exclude node_modules (the default), dist dir, coverage dir
+  "exclude": ["node_modules/", "dist/", "coverage/"],
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
   "compilerOptions": {
     // output to dist/ dir
