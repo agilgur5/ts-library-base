@@ -1,3 +1,4 @@
+import type { IPackageJson } from 'package-json-type'
 import type { IsExternal, RollupOptions, OutputOptions } from 'rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
@@ -5,7 +6,9 @@ import { babel } from '@rollup/plugin-babel'
 import { DEFAULT_EXTENSIONS as BABEL_DEFAULT_EXTENSIONS } from '@babel/core'
 import { terser } from 'rollup-plugin-terser'
 
-import pkgJson from './package.json'
+import packageJson from './package.json'
+
+const pkgJson = packageJson as IPackageJson // coerce to the right type
 
 // treat deps and peerDeps as externals -- don't bundle them
 const depsList = [
@@ -18,7 +21,7 @@ const isExternal: IsExternal = (id) => {
   // simple case: exact match (ex: '@babel/runtime')
   if (depsList.includes(id)) return true
   // submodule match (ex: '@babel/runtime/helpers/get')
-  for (let dep of depsList) {
+  for (const dep of depsList) {
     if (id.startsWith(dep)) return true
   }
   // otherwise false

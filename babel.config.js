@@ -6,14 +6,15 @@ module.exports = api => {
   const isTest = api.env('test')
   const jestTargets = { targets: { node: 'current' } }
   /** @type {[import('@babel/core').PluginTarget, import('@babel/core').PluginOptions]} */
-  let presetEnv = ['@babel/preset-env', { bugfixes: true }]
+  const presetEnv = ['@babel/preset-env', { bugfixes: true }]
   if (isTest) presetEnv[1] = { ...presetEnv[1], ...jestTargets }
 
   return {
     presets: [
       presetEnv,
       '@babel/preset-typescript',
-    ], plugins: [
+    ],
+    plugins: [
       // used with @rollup/plugin-babel
       '@babel/plugin-transform-runtime',
     ]
