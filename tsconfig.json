@@ -5,6 +5,8 @@
   "exclude": ["node_modules/", "dist/"],
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
   "compilerOptions": {
+    // output to dist/ dir
+    "outDir": "dist/",
     // output .d.ts declaration files for consumers
     "declaration": true,
     // output .js.map sourcemap files for consumers

@@ -3,6 +3,12 @@
   "extends": "./tsconfig.json",
   // allowlist of files to build
   "files": ["src/index.ts"],
+  "compilerOptions": {
+    // override the base
+    "noEmit": false,
+    // don't output JS files, only declarations (Rollup outputs the JS)
+    "emitDeclarationOnly": true,
+  },
   // read this file as a tsconfig even though it's named slightly differently
   "$schema": "https://json.schemastore.org/tsconfig",
 }

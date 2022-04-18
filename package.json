@@ -38,8 +38,10 @@
     "template"
   ],
   "scripts": {
-    "build": "rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2",
-    "build:watch": "npm run build -- -w",
+    "build": "concurrently -n rollup,tsc \"npm run build:rollup\" \"npm run build:types\"",
+    "build:rollup": "rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2",
+    "build:types": "tsc -p tsconfig.build.json",
+    "build:watch": "concurrently -n rollup,tsc \"npm run build:rollup -- -w\" \"npm run build:types -- -w\"",
     "tsc": "tsc",
     "test": "jest",
     "test:pub": "npm run build && npm pack",
@@ -62,6 +64,7 @@
     "@rollup/plugin-node-resolve": "^13.2.0",
     "@tsconfig/strictest": "^1.0.0",
     "changelog-maker": "^3.0.0",
+    "concurrently": "^7.1.0",
     "jest": "^27.5.1",
     "jest-config": "^27.5.1",
     "rollup": "^2.70.1",
