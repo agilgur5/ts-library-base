@@ -38,7 +38,7 @@
     "template"
   ],
   "scripts": {
-    "clean": "rm -rf dist/ && rm *.tgz",
+    "clean": "rm -rf dist/ && rm -f *.tgz",
     "clean:build": "npm run clean && npm run build",
     "build": "concurrently -n rollup,tsc \"npm run build:rollup\" \"npm run build:types\"",
     "build:rollup": "rollup -c rollup.config.ts --configPlugin rollup-plugin-typescript2",
