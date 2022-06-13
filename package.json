@@ -57,6 +57,7 @@
     "@babel/runtime": "^7.17.9"
   },
   "devDependencies": {
+    "@agilgur5/tsconfig": "^0.0.2",
     "@babel/core": "^7.17.9",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
@@ -66,7 +67,6 @@
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^21.0.3",
     "@rollup/plugin-node-resolve": "^13.2.0",
-    "@tsconfig/strictest": "^1.0.0",
     "changelog-maker": "^3.0.0",
     "concurrently": "^7.1.0",
     "jest": "^27.5.1",
