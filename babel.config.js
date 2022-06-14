@@ -1,6 +1,11 @@
+const pkgJson = require('./package.json')
+
+const runtimeVersion = pkgJson.dependencies['@babel/runtime']
+const NODE_ENV = process.env['NODE_ENV']
+
 /** @type {import('@babel/core').ConfigFunction} */
 module.exports = api => {
-  api.cache.using(() => process.env['NODE_ENV']) // cache based on NODE_ENV
+  api.cache.using(() => NODE_ENV + '_' + runtimeVersion) // cache based on NODE_ENV and runtimeVersion
 
   // normally use browserslistrc, but for Jest, use current version of Node
   const isTest = api.env('test')
@@ -16,7 +21,10 @@ module.exports = api => {
     ],
     plugins: [
       // used with @rollup/plugin-babel
-      '@babel/plugin-transform-runtime',
+      ['@babel/plugin-transform-runtime', {
+        regenerator: false, // not used, and would prefer babel-polyfills over this anyway
+        version: runtimeVersion // @babel/runtime's version
+      }]
     ]
   }
 }
