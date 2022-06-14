@@ -1,7 +1,7 @@
 const pkgJson = require('./package.json')
 
 const runtimeVersion = pkgJson.dependencies['@babel/runtime']
-const NODE_ENV = process.env['NODE_ENV']
+const NODE_ENV = process.env['NODE_ENV'] // eslint-disable-line dot-notation -- this conflicts with tsc, possibly due to outdated ESLint
 
 /** @type {import('@babel/core').ConfigFunction} */
 module.exports = api => {
@@ -17,7 +17,7 @@ module.exports = api => {
   return {
     presets: [
       presetEnv,
-      '@babel/preset-typescript',
+      '@babel/preset-typescript'
     ],
     plugins: [
       // used with @rollup/plugin-babel

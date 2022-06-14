@@ -45,6 +45,8 @@
     "build:types": "tsc -p tsconfig.build.json",
     "build:watch": "concurrently -n rollup,tsc \"npm run build:rollup -- -w\" \"npm run build:types -- -w\"",
     "tsc": "tsc",
+    "lint": "ts-standard",
+    "lint:fix": "ts-standard --fix",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
@@ -71,12 +73,12 @@
     "concurrently": "^7.1.0",
     "jest": "^27.5.1",
     "jest-config": "^27.5.1",
-    "package-json-type": "^1.0.3",
     "rollup": "^2.70.1",
     "rollup-plugin-node-externals": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.32.1",
     "ts-node": "^10.7.0",
+    "ts-standard": "^11.0.0",
     "typescript": "^4.4.0"
   }
 }
